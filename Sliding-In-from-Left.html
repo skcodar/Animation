@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sliding Text</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black;
+            overflow: hidden;
+        }
+
+        .text {
+            font-size: 50px;
+            font-weight: bold;
+            color: white;
+            font-family: Arial, sans-serif;
+            position: relative;
+            left: -100%;
+            animation: slideIn 2s forwards ease-out;
+        }
+
+        @keyframes slideIn {
+            0% { left: -100%; }
+            100% { left: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="text">SK-CODER</div>
+</body>
+</html>

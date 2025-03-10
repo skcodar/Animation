@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wave Animation</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black;
+        }
+
+        .text {
+            font-size: 50px;
+            color: white;
+            display: flex;
+            font-family: Arial, sans-serif;
+        }
+
+        .text span {
+            display: inline-block;
+            animation: wave 1.5s infinite ease-in-out;
+        }
+
+        @keyframes wave {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .text span:nth-child(1) { animation-delay: 0s; }
+        .text span:nth-child(2) { animation-delay: 0.1s; }
+        .text span:nth-child(3) { animation-delay: 0.2s; }
+        .text span:nth-child(4) { animation-delay: 0.3s; }
+        .text span:nth-child(5) { animation-delay: 0.4s; }
+        .text span:nth-child(6) { animation-delay: 0.5s; }
+        .text span:nth-child(7) { animation-delay: 0.6s; }
+    </style>
+</head>
+<body>
+    <div class="text">
+        <span>S</span><span>K</span><span>-</span><span>C</span><span>O</span><span>D</span><span>E</span><span>R</span>
+    </div>
+</body>
+</html>
