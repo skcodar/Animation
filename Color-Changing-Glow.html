@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Glow Effect</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black;
+        }
+
+        .text {
+            font-size: 50px;
+            font-weight: bold;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-shadow: 0 0 10px red, 0 0 20px blue, 0 0 30px green;
+            animation: colorGlow 2s infinite alternate;
+        }
+
+        @keyframes colorGlow {
+            0% {
+                text-shadow: 0 0 10px red, 0 0 20px blue, 0 0 30px green;
+            }
+            100% {
+                text-shadow: 0 0 20px blue, 0 0 30px green, 0 0 40px red;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="text">SK-CODER</div>
+</body>
+</html>
