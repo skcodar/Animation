@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rain Animation</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: black;
+        }
+
+        .raindrop {
+            position: absolute;
+            width: 2px;
+            height: 15px;
+            background-color: cyan;
+            opacity: 0.7;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            from {
+                transform: translateY(-100vh);
+                opacity: 1;
+            }
+            to {
+                transform: translateY(90vh);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function createRain() {
+            const rainContainer = document.body;
+            const numDrops = 100; // Number of raindrops
+
+            for (let i = 0; i < numDrops; i++) {
+                let drop = document.createElement("div");
+                drop.classList.add("raindrop");
+                
+                // Random position and animation duration
+                drop.style.left = Math.random() * window.innerWidth + "px";
+                drop.style.animationDuration = (Math.random() * 1.5 + 2) + "s";
+                drop.style.animationDelay = Math.random() * 2 + "s";
+
+                rainContainer.appendChild(drop);
+            }
+        }
+
+        createRain();
+    </script>
+</body>
+</html>

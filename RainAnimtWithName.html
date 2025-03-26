@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rain Animation with Heading</title>
+    <style>
+        /* Full-screen black background */
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: black;
+        }
+
+        /* Raindrop Styling */
+        .raindrop {
+            position: absolute;
+            width: 2px;
+            height: 15px;
+            background-color: cyan;
+            opacity: 0.6;
+            animation: fall linear infinite;
+            z-index: -1; /* Ensure rain stays behind the heading */
+        }
+
+        /* Rain Falling Animation */
+        @keyframes fall {
+            from {
+                transform: translateY(-100vh);
+                opacity: 1;
+            }
+            to {
+                transform: translateY(100vh);
+                opacity: 0.5;
+            }
+        }
+
+        /* Heading Container */
+        .heading {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Glowing Text Effect */
+        h1 {
+            color: black;
+            font-size: 100px;
+            font-weight: bold;
+            font-family: Arial, sans-serif;
+            text-transform: uppercase;
+            text-shadow: 0 0 5px cyan, 0 0 10px cyan, 0 0 20px cyan;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Heading in the Center -->
+    <div class="heading">
+        <h1>SKCODER</h1>
+    </div>
+
+    <script>
+        function createRain() {
+            const rainContainer = document.body;
+            const numDrops = 150; // Increase number of drops for a denser effect
+
+            for (let i = 0; i < numDrops; i++) {
+                let drop = document.createElement("div");
+                drop.classList.add("raindrop");
+                
+                // Random positioning and speed
+                drop.style.left = Math.random() * window.innerWidth + "px";
+                drop.style.animationDuration = (Math.random() * 1.5 + 1) + "s";
+                drop.style.animationDelay = Math.random() * 2 + "s";
+
+                rainContainer.appendChild(drop);
+            }
+        }
+
+        createRain();
+    </script>
+
+</body>
+</html>
